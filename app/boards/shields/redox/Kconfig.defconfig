@@ -10,6 +10,16 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+endif # ZMK_DISPLAY
+
 if SHIELD_REDOX_LEFT || SHIELD_REDOX_RIGHT
 
 config ZMK_SPLIT
