@@ -126,6 +126,7 @@ void initialize_display(struct k_work *work) {
 K_WORK_DEFINE(init_work, initialize_display);
 
 int zmk_display_init() {
+    k_msleep(10);
 #if IS_ENABLED(CONFIG_ZMK_DISPLAY_WORK_QUEUE_DEDICATED)
     k_work_queue_start(&display_work_q, display_work_stack_area,
                        K_THREAD_STACK_SIZEOF(display_work_stack_area),
